@@ -62,12 +62,11 @@ const ToDo = () => {
 						{listTask == "" && <p>No hay tareas</p>}
 
 						{/* lista de tareas nuevas */}
-						<div>
-							<ListaDeTareas
-								deleteTask={deleteTask}
-								listTask={listTask}
-							/>
-						</div>
+
+						<ListaDeTareas
+							deleteTask={deleteTask}
+							listTask={listTask}
+						/>
 
 						<p className="fs-6 p-0 mb-2">
 							{listTask.length} tareas faltantes
