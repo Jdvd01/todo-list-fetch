@@ -57,25 +57,23 @@ const ToDo = () => {
 	//Funcion para agregar tareas nuevas con PUT
 	const putTasks = async () => {
 		try {
-			let tareaValida = [];
 			if (task.label.trim() != "") {
-				tareaValida = [...listTask, task];
-				setError(false);
+				let response = await fetch(`${URL_BASE}/JoseVelasquez`, {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify([...listTask, task]),
+				});
+				if (response.ok) {
+					getTasks();
+					setError(false);
+				} else {
+					console.log(response.status);
+				}
 			} else {
 				setError(true);
-			}
-
-			let response = await fetch(`${URL_BASE}/JoseVelasquez`, {
-				method: "PUT",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(tareaValida),
-			});
-			if (response.ok) {
-				getTasks();
-			} else {
-				console.log(response.status);
+				return;
 			}
 		} catch (error) {
 			console.log(error);
