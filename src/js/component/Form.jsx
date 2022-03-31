@@ -27,7 +27,7 @@ const Form = ({ nuevaTarea, putTasks, task }) => {
 
 Form.propTypes = {
 	nuevaTarea: propTypes.func,
-	addTask: propTypes.func,
+	putTasks: propTypes.func,
 	task: propTypes.object,
 };
 
