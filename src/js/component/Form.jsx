@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
 
-const Form = ({ nuevaTarea, addTask, task }) => {
+const Form = ({ nuevaTarea, putTasks, task }) => {
 	return (
 		<form
 			onSubmit={(e) => {
@@ -11,15 +11,15 @@ const Form = ({ nuevaTarea, addTask, task }) => {
 				type="text"
 				className="nuevaTarea w-100 px-3 py-1"
 				placeholder="Nueva Tarea"
-				name="tarea"
-				value={task.tarea}
+				name="label"
+				value={task.label}
 				onChange={nuevaTarea}
 			/>
 			<button
 				type="button"
 				className="botonAgregar btn-info"
-				onClick={() => addTask()}>
-				Agregar!
+				onClick={() => putTasks()}>
+				Agregar nueva tarea!
 			</button>
 		</form>
 	);

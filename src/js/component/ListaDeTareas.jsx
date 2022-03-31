@@ -8,7 +8,7 @@ const ListaDeTareas = ({ deleteTask, listTask }) => {
 				<li
 					key={index}
 					className="muestraBoton list-group-item d-flex justify-content-between">
-					<p className="m-0">{item.tarea}</p>
+					<p className="m-0">{item.label}</p>
 					<div
 						className="botonEliminar"
 						onClick={() => deleteTask(index)}>
